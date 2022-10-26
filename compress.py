@@ -5,7 +5,7 @@ class Compress:
     def __init__(self):
         self.val = {}
         self.comp = []
-        self.desc = ""
+        self.desc = []
 
 
     def compress(self, text):
@@ -24,14 +24,11 @@ class Compress:
         return self.comp, self.val
 
     def uncompress(self, comp, val):
-        i = 0
-        for x in comp:
-            self.desc[0] = Compress.x.get_key()
-            i += 1
+        claves = list(val.keys())
+        valores = list(val.values())
+
+        for c in comp:
+            self.desc.append(list(val.keys())[list(val.values()).index(c)])
+
 
         return (" ".join(map(str, self.desc)))
-
-    def get_key(self, x):
-        for key, value in self.vals.items():
-            if x == value:
-                return key
